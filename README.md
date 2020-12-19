@@ -1,14 +1,15 @@
-###. build, push, deploy and test the resulting application
-1.Create your Dockerfile for building your image
+### build, push, deploy and test the resulting application
+
+1. Create your Dockerfile for building your image
 2. Build our static HTML image using the build command below.
 
-docker build -t <name> .
+   docker build -t <name> .
 3. docker run -d -p 8080:8080 <name image>
-4. docker tag <image-id> yourhubusername/verse_gapminder:firsttry
+4. docker tag <image-id> <namenewimage:v1>
 
 ### Push your image to the repository you created
 
-docker push yourhubusername/verse_gapminder
+docker push <namenewimage:v1>
 
 
 ### Use dockerhub to clone the repository to your local machine:
@@ -20,6 +21,8 @@ docker run -d -p 8080:8080 drorvt/texel:v1
 
 ### run test script to verify status code and print time and date 
 run "./script.sh "
+
+
 
 ### Use git to clone the repository to your local machine:
 git@github.com:drorvt/texel.git
@@ -38,6 +41,15 @@ kubectl apply -f nginx-deployment.yaml
 ### You can see the pods are running if you execute the following command:
 
 kubectl get pods
+
+### Create service and Deploy service
+
+kubectl apply -f service.yaml (network application should listen on port 80)
+kubectl get svc
+
+### Use curl command to Issuing requests to the port 80
+kubectl describe svc nginx-deployment
+
 
 
 
