@@ -22,6 +22,10 @@ docker run -d -p 8080:8080 drorvt/texel:v1
 ### run test script to verify status code and print time and date 
 run "./script.sh "
 
+or
+
+run http://localhost:8080/ 
+
 
 
 ### Use git to clone the repository to your local machine:
